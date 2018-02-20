@@ -1,0 +1,65 @@
+<h1>To Apply Filters</h1>
+
+<br>
+<br>
+
+
+<form action="filter/" method="post">
+    {% csrf_token %}
+    Text To be matched <input type="text" id="twe" name="name_field" value=" ënter the text" />
+    <br>
+
+    <input type="radio" name="order" value="starts"/>Starts with
+    <input type="radio" name="order" value="middle"/>In the middle
+    <input type="radio" name="order" value="ends"/>Ends with
+    <br>
+    <br>
+
+    Followers count      <input type="number" id="c1" name="follower_count" value=0 />
+    <br>
+
+    <input type="radio" name="tw_num" value="greater than"/>greater than
+    <input type="radio" name="tw_num" value="less than"/>less than
+    <input type="radio" name="tw_num" value="equal to"/>equal to
+    <br><br>
+
+     Retweet count<input type="number" id="c2" name="retweet_count" value=0 />
+    <br>
+
+    <input type="radio" name="rw_num" value="greater than"/>greater than
+    <input type="radio" name="rw_num" value="less than"/>less than
+    <input type="radio" name="rw_num" value="equal to"/>equal to
+    <br><br>
+
+    Favourites count<input type="number" id="c3" name="favourites_count" value=0 />
+    <br>
+
+    <input type="radio" name="fw_num" value="greater than"/>greater than
+    <input type="radio" name="fw_num" value="less than"/>less than
+    <input type="radio" name="fw_num" value="equal to"/>equal to
+    <br><br><br>
+
+    Starting Date<input type="date" name="s_dat" value="date_field"/>
+    Ending Date<input type="date" name="e_dat" value="date_field"/>
+    <br><br>
+
+    Select Language <select name="lang">
+    <option value="en">english</option>
+    <option value="ab">arabic</option>
+    <option value="jb">Japanese</option>
+    <option value="es">spanish</option>
+    </select>
+    <br><br>
+
+    Select the sorting order <input type="radio" name="ord" value="Asc"/>Ascending
+    <input type="radio" name="ord" value="Des"/>Descending
+    <br>
+    <input type="radio" name="csv" value=1 /> Do you want to export the filtered results in csv format ?
+
+    <br> mention the path for the csv file to be stored in backend!
+    <br>
+    <input type="submit" value="Apply Filter"/>
+    <br>
+
+
+</form>

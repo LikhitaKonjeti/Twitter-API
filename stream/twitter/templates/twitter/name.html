@@ -1,0 +1,58 @@
+<h1> The filtered tweets are:</h1>
+<head>
+      <title>HTML Table Cellpadding</title>
+    <style>
+ table{
+    float: left;
+}
+.pagination{
+clear: left;
+}
+</style>
+   </head>
+
+   <body>
+      <table border = "1" cellpadding = "5" cellspacing = "5" >
+         <tr>
+            <th>Tweets</th>
+
+         </tr>
+            {% for user in tweets %}
+         <tr>
+
+            <td>{{ user }}</td>
+
+         </tr>
+          {% endfor %}
+
+      </table>
+
+      <table border = "1" cellpadding = "5" cellspacing = "5">
+         <tr>
+            <th>Created At</th>
+
+         </tr>
+         {% for user in created_at %}
+         <tr>
+            <td>{{ user }}</td>
+         </tr>
+          {% endfor %}
+      </table>
+    </body>
+
+<ul class="pagination">
+{% if users.has_previous %}
+    <li>
+        <span><a href="?page={{ users.previous_page_number }}">Previous</a></span>
+    </li>
+{% endif %}
+    <li class="">
+        <span>Page {{ users.number }} of {{ users.paginator.num_pages }}.</span>
+    </li>
+{% if users.has_next %}
+    <li>
+        <span><a href="?page={{ users.next_page_number }}">Next</a></span>
+    </li>
+{% endif %}
+</ul>
+
